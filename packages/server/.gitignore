@@ -1,0 +1,9 @@
+.env
+.env.production
+!.env.example
+*.sqlite
+server
+logs/
+dist/
+node_modules/
+*.log

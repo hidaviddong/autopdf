@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "scripts": {
+    "dev": "bun --watch index.ts",
+    "db:seed": "bun run ./db/seed.ts",
+    "db:clean": "bun run ./db/clean.ts",
+    "db:studio": "bunx drizzle-kit studio",
+    "db:push": "bunx drizzle-kit push",
+    "build": "bun --env-file=.env.production build --compile --target=bun-linux-x64 --minify-whitespace --minify-syntax --target bun --outfile ../../server ./index.ts",
+    "start": "bun --env-file=.env.production run index.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.7",
+    "@bogeychan/elysia-logger": "^0.1.4",
+    "@elysiajs/cors": "^1.1.1",
+    "@elysiajs/eden": "^1.2.0",
+    "@elysiajs/opentelemetry": "^1.2.0",
+    "@elysiajs/static": "^1.2.0",
+    "@elysiajs/stream": "^1.1.0",
+    "@elysiajs/swagger": "^1.2.0",
+    "@libsql/client": "^0.14.0",
+    "@myriaddreamin/typst-ts-node-compiler": "^0.5.1",
+    "ai": "^4.0.13",
+    "better-auth": "^1.1.10",
+    "better-sqlite3": "^11.7.2",
+    "drizzle-orm": "^0.38.3",
+    "elysia": "^1.2.9",
+    "nanoid": "^5.0.9",
+    "openai": "^4.78.1",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/bun": "^1.1.14",
+    "drizzle-kit": "^0.30.1"
+  }
+}

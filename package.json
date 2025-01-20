@@ -1,0 +1,12 @@
+{
+  "name": "autopdf",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run scripts/dev.ts",
+    "build": "bun run scripts/build.ts",
+    "start": "bun run scripts/start.ts"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
