@@ -1,6 +1,7 @@
 .env
 .env.production
 !.env.example
+!pm2.config.js
 *.sqlite
 server
 logs/
