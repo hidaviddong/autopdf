@@ -126,11 +126,9 @@ const createAPI = () => {
   };
 };
 
-const api = createAPI();
-
 export function useChatMutation() {
   return useMutation({
-    mutationFn: (data: ChatV1Request) => api.chat.v1(data),
+    mutationFn: (data: ChatV1Request) => createAPI().chat.v1(data),
     onError(error, variables, context) {
       console.log(error);
     },
@@ -140,19 +138,19 @@ export function useChatMutation() {
 // Query Options
 export const chatListQueryOptions = queryOptions({
   queryKey: ["chatList"],
-  queryFn: () => api.chatList.getAll(),
+  queryFn: () => createAPI().chatList.getAll(),
 });
 
 export const chatMessagesQueryOptions = (chatListId: string) =>
   queryOptions({
     queryKey: ["chatMessages", chatListId],
-    queryFn: () => api.chatList.getMessages(chatListId),
+    queryFn: () => createAPI().chatList.getMessages(chatListId),
     enabled: !!chatListId,
   });
 
 export function useDownloadPDFMutation() {
   return useMutation({
-    mutationFn: (data: Download) => api.download.pdf(data),
+    mutationFn: (data: Download) => createAPI().download.pdf(data),
     onError: (error) => {
       console.error("下载失败:", error);
     },
@@ -161,6 +159,6 @@ export function useDownloadPDFMutation() {
 
 export function useDeleteChatMutation() {
   return useMutation({
-    mutationFn: (chatId: string) => api.chatList.delete(chatId),
+    mutationFn: (chatId: string) => createAPI().chatList.delete(chatId),
   });
 }
