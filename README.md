@@ -2,10 +2,12 @@
 
 ## Tech Stack
 
+Bun monorepo
+
 - **Backend**: ElysiaJS
 - **Frontend**: React + Vite + TanStack Router
 - **Authentication**: Better Auth
-- **ORM**: Drizzle
+- **Database**: Drizzle + SQLite
 
 ## Setup
 
@@ -40,11 +42,13 @@ DB_FILE_NAME=
 BETTER_AUTH_SECRET=
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+GOOGLE_REDIRECT_URI=
 GITHUB_CLIENT_ID=
 GITHUB_CLIENT_SECRET=
+GITHUB_REDIRECT_URI=
 ```
 
-For OAuth setup, please refer to [Better-Auth documentation](https://www.better-auth.com/docs/authentication/github)
+For OAuth setup, please refer to [Better-Auth documentation](https://www.better-auth.com)
 
 
 ### Initialize database:
