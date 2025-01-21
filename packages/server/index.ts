@@ -4,7 +4,6 @@ import { chat, download, chatList } from "./routes";
 import { swagger } from "@elysiajs/swagger";
 import { auth as betterAuth } from "./lib/auth";
 
-console.log(process.env.BETTER_AUTH_SECRET)
 export const betterAuthView = (context: Context) => {
   const BETTER_AUTH_ACCEPT_METHODS = ["POST", "GET"];
   if (BETTER_AUTH_ACCEPT_METHODS.includes(context.request.method)) {
