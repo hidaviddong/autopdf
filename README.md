@@ -1,55 +1,56 @@
 # Auto PDF
+
 ![preview](https://github.com/user-attachments/assets/c9293a43-f1f2-4240-be44-811a79485c67)
 
-## 为什么要做
-受到各类聊天生成代码/UI的启发，这个项目可以通过聊天来生成 PDF 文档
+## Motivation
+Inspired by various chat-based code/UI generation tools, this project enables PDF document generation through chat interactions.
 
-## 在线访问
+## Online Access 
 [**Auto PDF**](https://autopdf.app)
 
 ## TODO
 
-如果你对项目有任何功能与建议，欢迎随时提出 Issue 或 PR！👏
-- [x] 支持 PDF 下载
-- [x] 支持 PDF 多版本查看
-- [ ] 国际化
-- [ ] 新增模板库
-- [ ] 支持用户自定义模板
-- [ ] 支持不同 model 的切换
-- [ ] 优化 prompt， 添加更多模板
-- [ ] 支持手动调整 PDF 的信息，例如标题/字体/颜色等
-- [ ] 支持 PDF 中的图片插入
-- [ ] 支持 PDF 转 Word 功能
+If you have any feature suggestions or feedback for the project, feel free to create an Issue or PR! 👏
 
+- [x] PDF download support
+- [x] Multiple PDF version viewing
+- [ ] i18n
+- [ ] Add template library
+- [ ] Custom template support
+- [ ] Support model switching
+- [ ] Optimize prompts, add more templates
+- [ ] Support manual adjustment of PDF properties (title/font/color etc.)
+- [ ] Support image insertion in PDFs
+- [ ] Support PDF to Word conversion
 
-## 如何自己部署
+## Deployment Guide
 
-在根目录运行：
+In the root directory, run：
 
 ```bash
 bun install
 ```
-### 前端
+### Frontend
 
 ```bash
 cd packages/client
 cp .env.example .env
 ```
 
-配置相关环境变量
+Configure the environment variables:
 
 ```bash
 VITE_API_URL=http://localhost:3000
 ```
 
-### 后端
+### Backend
 
 ```bash
 cd packages/server
 cp .env.example .env
 ```
 
-配置相关环境变量
+Configure the environment variables:
 
 ```bash
 DB_FILE_NAME=
@@ -65,27 +66,28 @@ GITHUB_REDIRECT_URI=
 For OAuth setup, please refer to [Better-Auth documentation](https://www.better-auth.com)
 
 
-### 数据库
+### Database
 
 ```bash
 cd packages/server
 bun run db:push
 ```
 
-#### 开发
-根目录运行
+
+#### Development
+In the root directory, run：
 ```bash
 bun run dev
 ```
 
-#### 构建
-根目录运行
+#### Build
+In the root directory, run：
 ```bash
 bun run build
 ```
 
-### 生产
-根目录运行
+### Production
+In the root directory, run：
 ```bash
 bun run start
 ```
