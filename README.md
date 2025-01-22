@@ -1,4 +1,8 @@
 # Auto PDF
+<p align="left">
+  <a href="README.md">English</a> /
+  <a href="README-CN.md">中文</a>
+</p>
 
 ![preview](https://github.com/user-attachments/assets/c9293a43-f1f2-4240-be44-811a79485c67)
 
@@ -91,3 +95,4 @@ In the root directory, run：
 ```bash
 bun run start
 ```
+
