@@ -10,6 +10,7 @@
     "start": "bun --env-file=.env.production run index.ts"
   },
   "dependencies": {
+    "@ai-sdk/deepseek": "^0.1.14",
     "@ai-sdk/openai": "^1.0.7",
     "@bogeychan/elysia-logger": "^0.1.4",
     "@elysiajs/cors": "^1.1.1",
@@ -20,7 +21,7 @@
     "@elysiajs/swagger": "^1.2.0",
     "@libsql/client": "^0.14.0",
     "@myriaddreamin/typst-ts-node-compiler": "^0.5.1",
-    "ai": "^4.0.13",
+    "ai": "^4.1.58",
     "better-auth": "^1.1.10",
     "better-sqlite3": "^11.7.2",
     "drizzle-orm": "^0.38.3",

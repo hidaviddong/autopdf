@@ -4,11 +4,11 @@ import db from "../db";
 import { chatListTable, chatMessagesTable } from "../db/schema";
 import { eq } from "drizzle-orm";
 import { userMiddleware } from "../middlewares/auth-middleware";
-import { createOpenAI } from "@ai-sdk/openai";
 import { generateObject } from "ai";
 import { ErrorType, logger } from "../middlewares/logger";
 import { getSystemPrompt } from "../prompts";
 import { renderSVG } from "../tools";
+import { createDeepSeek } from "@ai-sdk/deepseek";
 import z from "zod";
 
 export const chat = new Elysia({
@@ -29,7 +29,8 @@ export const chat = new Elysia({
   .post(
     "/v1",
     async ({ body, bearer, error: ElysiaError, user, log }) => {
-      const openai = createOpenAI({
+      // use deepseek
+      const openai = createDeepSeek({
         apiKey: bearer,
       });
       const systemPrompt = await getSystemPrompt();
@@ -59,7 +60,7 @@ export const chat = new Elysia({
       // 2. generate content
       try {
         const result = await generateObject({
-          model: openai("gpt-4o-mini"),
+          model: openai("deepseek-chat"),
           temperature: 0,
           messages: [
             {
